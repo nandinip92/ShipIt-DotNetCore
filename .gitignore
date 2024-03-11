@@ -2,3 +2,5 @@
 **/.env
 bin
 obj
+
+ShipIt-database-dump.sql
