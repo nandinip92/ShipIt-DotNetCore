@@ -134,14 +134,10 @@ namespace ShipIt.Controllers
                 totalOrderWeightInKgs =
                     lineItemsWithWeights.Sum(item => item.Weight * item.Quantity) / 1000;
                 numberOfTrucks = (int)Math.Ceiling(totalOrderWeightInKgs / 2000);
-
+                Truck currentTruck = null;
+                float MaxTruckWeight = 2000;
                 //What to do if trucks has weight left?[1500, 1800, 500, 100]
                 //What if ProductWeight>2000?
-
-                //First Truck
-                Truck currentTruck=null ;
-                float MaxTruckWeight = 2000;
-               
                 foreach (var item in lineItemsWithWeights)
                 {
                     var product = products[item.Gtin];
@@ -149,6 +145,7 @@ namespace ShipIt.Controllers
                     var quantity = item.Quantity;
                     do
                     {
+                        //Following loop is to Chack if there is a truck that can accommodate current product
                         foreach (var truck in trucks)
                         {
                             if (MaxTruckWeight - truck.WeightInTruck > weightInKgsPerProduct)
@@ -161,6 +158,8 @@ namespace ShipIt.Controllers
                                 currentTruck = null;
                             }
                         }
+                        //If theere is no truck that cannot accommodate the current product then
+                        //load it into new truck
                         if (currentTruck == null)
                         {
                             currentTruck = new Truck
