@@ -139,18 +139,9 @@ namespace ShipIt.Controllers
                 //What if ProductWeight>2000?
 
                 //First Truck
-                Truck currentTruck = new Truck
-                {
-                    TruckNumber = ++truckNum,
-                    WeightInTruck = 0,
-                    ProductsList = new List<ProductInTruck>()
-                };
+                Truck currentTruck=null ;
                 float MaxTruckWeight = 2000;
-                if (trucks.Count == 0)
-                {
-                    trucks.Add(currentTruck);
-                }
-
+               
                 foreach (var item in lineItemsWithWeights)
                 {
                     var product = products[item.Gtin];
