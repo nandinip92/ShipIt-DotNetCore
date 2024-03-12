@@ -11,7 +11,7 @@ namespace ShipIt.Models.ApiModels
     {
         public float TotalOrderWeightInKgs { get; set; }
         public int NumberOfTrucks { get; set; }
-        public List<Truck> Truck { get; set; }
+        public List<Truck> Trucks { get; set; }
 
         public override String ToString()
         {
