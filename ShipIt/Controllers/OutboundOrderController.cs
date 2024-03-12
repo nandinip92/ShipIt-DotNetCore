@@ -139,7 +139,8 @@ namespace ShipIt.Controllers
     }
 }
 
-
+//SELECT * FROM public.stock as s
+//Join public.gtin as g ON s.p_id=g.p_id WHERE s.w_id=9 Order By g.m_g desc;
 
 //POST : OutboundOrderRequestModel
 // {
@@ -176,5 +177,36 @@ namespace ShipIt.Controllers
 //                         "gtin" : "0730521100209",
 //                         "quantity" : 31
 //                     }
+// ]
+// }
+
+
+// {
+// "WarehouseId" : 9,
+// "OrderLines" : [
+//                     {
+//                         "gtin" : "0049022327474",
+//                         "quantity" : 4
+//                     },
+
+//                     {
+//                         "gtin" : "0052649777782",
+//                         "quantity" : 9
+//                     },
+
+//                     {
+//                         "gtin" : "0052742462608",
+//                         "quantity" :2
+//                     },
+
+//                     {
+//                         "gtin" : "0022000115706",
+//                         "quantity" : 5
+//                     },
+//                     {
+//                         "gtin" : "7896262301121",
+//                         "quantity" : 3
+//                     }
+
 // ]
 // }
