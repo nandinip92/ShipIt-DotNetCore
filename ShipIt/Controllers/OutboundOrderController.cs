@@ -150,10 +150,8 @@ namespace ShipIt.Controllers
                     trucks.Add(currentTruck);
                 }
 
-                // for (int i = 0; i < lineItemsWithWeights.Count; i++)
                 foreach (var item in lineItemsWithWeights)
                 {
-                    // var item = lineItemsWithWeights[i];
                     var product = products[item.Gtin];
                     var weightInKgsPerProduct = product.Weight / 1000;
                     var quantity = item.Quantity;
