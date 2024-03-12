@@ -182,7 +182,6 @@ namespace ShipIt.Controllers
                         // Console.WriteLine($"**** Quantity {quantity}");
                         var productTotalWeight = (quantity * product.Weight) / 1000;
 
-                        // truckWeight = currentTruck.WeightInTruck + productTotalWeight;
                         var WeightAvailable = MaxTruckWeight - currentTruck.WeightInTruck;
                         if (WeightAvailable >= productTotalWeight)
                         {
