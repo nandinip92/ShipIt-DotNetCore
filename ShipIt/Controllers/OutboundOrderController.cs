@@ -127,6 +127,7 @@ namespace ShipIt.Controllers
             {
                 throw new InsufficientStockException(string.Join("; ", errors));
             }
+            // If there are no Errors in the Order then Load the Data into trucks
             else
             {
                 var truckNum = 0;
